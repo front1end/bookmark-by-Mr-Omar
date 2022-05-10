@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    color: $grayishBlue;
+    line-height: 1.5;
+    font-size: 1rem;
+
+    @include breakpoint-up(large) {
+        font-size: 1.125rem;
+    }
+}
+
+.button {
+    box-shadow: 0px 0.375rem 12px #5368df6b;
+}
+
+// Spacing
+.container {
+    max-width: 67.375rem;
+    margin: 0 auto;
+
+    &--pall {
+        padding-top: 4.375rem;
+        padding-right: 1.5rem;
+        padding-bottom: 4.375rem;
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--py {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+    }
+
+    &--px {
+        padding-right: 2rem;
+        padding-left: 2rem;
+    }
+
+    &--pt {
+        padding-top: 4.375rem;
+
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+        }
+    }
+
+    &--pr {
+        padding-right: 1.5rem;
+    }
+
+    &--pb {
+        padding-bottom: 4.375rem;
+
+        @include breakpoint-up(large) {
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--pl {
+        padding-left: 1.5rem;
+    }
+}
+
+// Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    &-ai-fs {
+        align-items: flex-start;
+    }
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.section__intro {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 0 1rem;
+
+    @include breakpoint-up(large) {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+        font-weight: 500;
+        color: $veryDarkBlue;
+
+        @include breakpoint-up(large) {
+            font-size: 2rem;
+        }
+    }
+
+    p {
+        margin: auto;
+        width: auto;
+
+        @include breakpoint-up(large) {
+            width: 33.5rem;
+        }
+    }
+}

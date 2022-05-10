@@ -1,0 +1,71 @@
+.download {
+    .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: 0 3rem;
+        margin-bottom: 10rem;
+        flex-direction: column;
+
+        @include breakpoint-up(large) {
+            flex-direction: row;
+        }
+
+        .download__card {
+            width: 17em;
+            padding: 3rem 0 2.3rem;
+            text-align: center;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 5px 10px rgba(154, 160, 185, .05), 0 15px 40px rgba(166, 173, 201, .2);
+
+            h3 {
+                font-size: 21px;
+                font-weight: 500;
+                color: $veryDarkBlue;
+                margin: 27px 0 0;
+            }
+
+            p {
+                font-size: 15px;
+                margin: 0.6rem 0 4rem;
+            }
+
+            .button {
+                position: relative;
+                background: $softBlue;
+                padding: 11px 1.75rem;
+                border-radius: 5px;
+                color: white;
+                font-size: 15px;
+                transition: all 0.3s ease-in-out;
+                border: 2px solid transparent;
+
+                &:hover {
+                    background: white;
+                    color: $softBlue;
+                    border: 2px solid $softBlue;
+                }
+
+                &::before {
+                    content: url('../images/bg-dots.svg');
+                    position: absolute;
+                    top: -32px;
+                    left: 0;
+                }
+            }
+        }
+    }
+
+    &__card:nth-child(2) {
+        margin-top: 2rem;
+    }
+
+    &__card:last-child {
+        margin-top: 2rem;
+
+        @include breakpoint-up(large) {
+            margin-top: 4rem;
+        }
+    }
+}

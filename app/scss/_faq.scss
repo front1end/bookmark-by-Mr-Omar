@@ -1,0 +1,119 @@
+.FAQ {
+  input {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+  }
+
+  // Layout
+  .row {
+    display: flex;
+
+    .col {
+      flex: 1;
+
+      &:last-child {
+        margin-left: 1.5em;
+        margin-right: 1.3em;
+
+        @include breakpoint-up(large) {
+          margin-left: 1em;
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  /* Accordion styles */
+  .tabs {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .tab {
+    max-width: 33.5rem;
+    margin: auto;
+    color: $veryDarkBlue;
+    overflow: hidden;
+    border-top: 1px solid lightgray;
+
+    &:last-child {
+      border-bottom: 1px solid lightgray;
+    }
+
+    &-label {
+      display: flex;
+      justify-content: space-between;
+      padding: 1em 0px 1em 3px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+
+      @include breakpoint-up(large) {
+        font-size: 1.125rem;
+        padding: 1em;
+      }
+
+      /* Icon */
+      &:hover {
+        color: $softRed;
+      }
+
+      &::after {
+        content: "\276F";
+        width: 1em;
+        height: 1em;
+        text-align: center;
+        transition: all .35s;
+        transform: rotate(90deg);
+        color: $softBlue;
+      }
+    }
+
+    &-content {
+      max-height: 0;
+      padding: 0 1em;
+      line-height: 2;
+      font-size: 1rem;
+      color: $grayishBlue;
+      transition: all .35s;
+    }
+
+    &-close {
+      display: flex;
+      justify-content: flex-end;
+      padding: 1em;
+      font-size: 0.75em;
+      cursor: pointer;
+    }
+  }
+
+  // :checked
+  input:checked {
+    +.tab-label {
+      border-bottom: 1px solid lightgray;
+
+      &::after {
+        transform: rotate(-90deg);
+        color: $softRed;
+      }
+    }
+
+    ~.tab-content {
+      max-height: 100vh;
+      padding: 2em 1em;
+    }
+  }
+
+  .button {
+    width: 7rem;
+    color: white;
+    display: block;
+    padding: 0.8125rem 0px;
+    text-align: center;
+    margin: 3.5rem auto;
+    border-radius: 5px;
+    background: $softBlue;
+    border: 2px solid $softBlue;
+  }
+}
